@@ -13,38 +13,39 @@ hbs.registerPartials(__dirname + '/views/partials', function (err) {console.log(
 // Servir contenido estatico, ejecuta el indet.html de la carpeta public
 app.use(express.static('public'));
 
-app.get('/', (req, res) => {
-	res.render('home', {
-		nombre: 'Sebas Estrada',
-		titulo: 'Curso Node'
-	});
-});
+// app.get('/', (req, res) => {
+// 	res.render('home', {
+// 		nombre: 'Sebas Estrada',
+// 		titulo: 'Curso Node'
+// 	});
+// });
 
 // La linea de app.use ejecuta el home e ignora este codigo
 // app.get('/', (req, res) => {
 // 	res.send('Home Page')
 // });
 
-app.get('/generic', (req, res) => {
-	// res.sendFile(__dirname + '/public/generic.html');
+// app.get('/generic', (req, res) => {
+// 	// res.sendFile(__dirname + '/public/generic.html');
 
-	res.render('generic', {
-		nombre: 'Sebas Estrada',
-		titulo: 'Curso Node'
-	});
-});
+// 	res.render('generic', {
+// 		nombre: 'Sebas Estrada',
+// 		titulo: 'Curso Node'
+// 	});
+// });
 
-app.get('/elements', (req, res) => {
-	// res.sendFile(__dirname + '/public/elements.html');
+// app.get('/elements', (req, res) => {
+// 	// res.sendFile(__dirname + '/public/elements.html');
 
-	res.render('elements', {
-		nombre: 'Sebas Estrada',
-		titulo: 'Curso Node'
-	});
-});
+// 	res.render('elements', {
+// 		nombre: 'Sebas Estrada',
+// 		titulo: 'Curso Node'
+// 	});
+// });
 
 app.get('*', (req, res) => {
-	res.sendFile(__dirname + '/public/back/404.html');
+	// res.sendFile(__dirname + '/public/back/404.html');
+	res.sendFile(__dirname + '/public/index.html');
 });
 
 app.listen(port, () => {
